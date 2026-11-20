@@ -28,7 +28,7 @@ while True:
                           if r:
                                  t.pendown()
                                  r=False
-                          b+=0.1
+                          b+=0.5
      except ValueError:
            sys.stderr.write("애미뒤진새끼야\n")
            sys.stdout.write("\n")
