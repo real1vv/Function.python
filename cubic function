@@ -1,0 +1,49 @@
+import turtle,sys
+t=turtle.Turtle()
+t.hideturtle()
+t.speed(0)
+def d(ld=500):
+    t.pensize(1)
+    t.color("black")
+    t.penup(); t.goto(-ld,0); t.pendown(); t.goto(ld,0)
+    t.penup(); t.goto(0,-ld); t.pendown(); t.goto(0,ld)
+d()
+def f(x):
+     return x**3
+while True:
+     a=input("원하는 이차함수의 x^2의 계수를 입력하세요(예:y=x^2은 1로 입력,0이 아닌 정수로만 입력):")
+     sys.stdout.write("\n")
+     try:
+           n=int(a)
+           if n==0:
+                 raise ValueError("애미뒤진새끼야")
+           x=100/n
+           t.color("red")
+           t.pensize(2)
+           t.penup()
+           b=-6
+           r=True
+           if x>0:
+                while b<=6:
+                     px,py=b*x,f(b)*x
+                     t.goto(px,py)
+                     if r:
+                          t.pendown()
+                          r=False
+                     b+=0.1
+           else:
+                while b<=6:
+                     px,py=-b*x,f(b)*x
+                     t.goto(px,py)
+                     if r:
+                          t.pendown()
+                          r=False
+                     b+=0.1
+     except ValueError:
+           sys.stderr.write("애미뒤진새끼야\n")
+           sys.stdout.write("\n")
+     c=input("다시 입력하시겠습니까?(y/n):")
+     sys.stdout.write("\n")
+     if c.lower()!="y":
+          sys.stdout.write("프로그램을 종료합니다.")
+          break
