@@ -11,7 +11,7 @@ d()
 def f(x):
      return x**3
 while True:
-     a=input("원하는 이차함수의 x^2의 계수를 입력하세요(예:y=x^2은 1로 입력,0이 아닌 정수로만 입력):")
+     a=input("원하는 삼차함수의 x^3의 계수를 입력하세요(예:y=x^2은 1로 입력,0이 아닌 정수로만 입력):")
      sys.stdout.write("\n")
      try:
            n=int(a)
